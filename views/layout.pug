@@ -1,0 +1,15 @@
+doctype html
+html(lang="en")
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/css/font-awesome.min.css')
+
+    script(typ='text/javascript' src='/scripts/jquery.min.js')
+    script(typ='text/javascript' src='/javascripts/jquery.rotate.js')
+    script(src='/javascripts/run.js')
+    script(type='text/javascript' src='/scripts/bootstrap.min.js')
+  body
+    block content
+    include footer.pug

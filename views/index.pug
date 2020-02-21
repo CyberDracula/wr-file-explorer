@@ -1,0 +1,52 @@
+extends layout
+
+block content
+  .content
+    nav.navbar.navbar-dark.navbar-expand.bg-dark.navigation-clean
+      .container
+        a.navbar-brand(href='#') Wingsrom Flying Quality Parts - Tool List
+    header.masthead.text-dark.text-center
+      .overlay
+      .container
+        .row
+          .col-xl-9.mx-auto
+            h1.mb-5 Tool List
+          .col-xl-9.mx-auto
+            form#searchform(action="/")
+              .form-group
+                label.control-label.form-control-lg.text-right(for='type') Machine type: &nbsp; 
+                .btn-group.btn-group-toggle(data-toggle='buttons')
+                  label.btn.btn-primary.btn-lg.active
+                    input#freze(type='radio' name='type' value="freze" checked='')
+                    |  MILL
+                  label.btn.btn-primary.btn-lg
+                    input#strunguri(type='radio' name='type' value="strunguri")
+                    |  LATHE
+              br
+              .form-group
+                .col.row
+                  .col-sm-8
+                    input#searchinput.form-control.form-control-lg(type='text' placeholder='Part Number')
+                  .col-sm-4
+                    button#search.btn.btn-primary.btn-block.btn-lg(type='button') Search
+    section.showcase
+      .container
+        .row.no-gutters.justify-content-md-center
+          .col-lg-6.my-auto.order-lg-1.showcase-text#results
+        #myModal.modal.fade.bd-example-modal-lg(role='dialog')
+          .modal-dialog.modal-dialog-centered.modal-lg
+            // Modal content
+            .modal-content
+              .modal-header
+                h4.modal-title
+                button.btn(type='button' aria-label='Left' onClick="$('#pdfimg').imageResize(); $('#pdfimg').rotateLeft(); ")
+                  i.fa.fa-undo(aria-hidden="hidden")
+                button.btn(type='button' aria-label='Right'  onClick="$('#pdfimg').rotateRight();")
+                  i.fa.fa-rotate-right
+                button.close(type='button' data-dismiss='modal' aria-label='Close')
+                  span(aria-hidden="true") &times;
+              .modal-body
+              .modal-footer
+                button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+      
+  

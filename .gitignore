@@ -1,0 +1,4 @@
+node_modules/
+docs/folder1/*
+docs/folder2/*
+.env
