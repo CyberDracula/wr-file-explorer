@@ -21,5 +21,8 @@
     "pdf-poppler": "^0.2.1",
     "popper.js": "^1.16.1",
     "pug": "^2.0.4"
+  },
+  "devDependencies": {
+    "lint": "^0.7.0"
   }
 }

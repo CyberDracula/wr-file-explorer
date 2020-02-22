@@ -34,7 +34,7 @@ exports.find = (req, res) => {
             if (err) return console.error("handle err", err);
             var EndFiles = [];
         Files.forEach(File => {
-            if(File.match(/^[a-zA-Z0-9\\ ]*\\VALID\\\w+.[a-zA-Z]{3}/gi)) {
+            if(File.match(/^[a-zA-Z0-9_\\ ]*\\VALID\\[a-zA-Z0-9_\-\'\\ ]*.[a-zA-Z]{3}/gi)) {
                 EndFiles.push(File);
             }  
         });
