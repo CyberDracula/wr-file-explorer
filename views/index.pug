@@ -26,7 +26,7 @@ block content
               .form-group
                 .col.row
                   .col-sm-8
-                    input#searchinput.form-control.form-control-lg(type='text' placeholder='Part Number')
+                    input#searchinput.form-control.form-control-lg(type='text' minlength="3" placeholder='Part Number')
                   .col-sm-4
                     button#search.btn.btn-primary.btn-block.btn-lg(type='button') Search
     section.showcase
@@ -39,13 +39,19 @@ block content
             .modal-content
               .modal-header
                 h4.modal-title
-                button.btn(type='button' aria-label='Left' onClick="$('#pdfimg').imageResize(); $('#pdfimg').rotateLeft(); ")
+                button.btn(type='button' aria-label='Left' tite="Rotate left" onClick="rotateImage('left'); ")
                   i.fa.fa-undo(aria-hidden="hidden")
-                button.btn(type='button' aria-label='Right'  onClick="$('#pdfimg').rotateRight();")
+                button.btn(type='button' aria-label='Right'  tite="Rotate right" onClick="rotateImage('right');")
                   i.fa.fa-rotate-right
+                div.vline
+                button.btn(type='button' aria-label='ZoomIn'  tite="Zoom In" onClick="zoom('in');")
+                  i.fa.fa-search-plus
+                button.btn(type='button' aria-label='ZoomOut'  tite="Zoom Out" onClick="zoom('out');")
+                  i.fa.fa-search-minus
                 button.close(type='button' data-dismiss='modal' aria-label='Close')
                   span(aria-hidden="true") &times;
-              .modal-body
+              .modal-body.text-center.flex-container
+                img#spinner(src="images/spinner.svg", alt="spinner")
               .modal-footer
                 button.btn.btn-secondary(type='button' data-dismiss='modal') Close
       

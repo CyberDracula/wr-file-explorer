@@ -19,9 +19,14 @@ exports.find = (req, res) => {
         else
             dir = process.env.FOLDER_STRUNGURI;
         
-        
         let file = req.query.search;
-        
+
+        if(process.env.PATH_RELATIVE == 0) {
+            //only for absolute path solution
+            var absolutePath = 1;
+            var olddir = process.cwd();
+            process.chdir(process.env.PATH_PARTITION+':');
+        }
         Filehound.create()
         .paths(dir)
         .glob('*'+file.toUpperCase()+'*'+ext)
@@ -34,6 +39,9 @@ exports.find = (req, res) => {
             }  
         });
         console.log(EndFiles);
+
+        absolutePath ? process.chdir(olddir) : null; //return to old working dir
+
         if(EndFiles.length > 0) {
             res.json(Object.assign({}, EndFiles));
         }
