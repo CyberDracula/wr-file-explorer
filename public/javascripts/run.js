@@ -105,7 +105,7 @@ function rotateImage(orientation) {
 function zoom(position) {
     var size = '100%';
     $( "#pdfimg" ).effect( "size", {
-        to: { width: '80%', height: '80%' }
+        to: { width: '75%', height: '75%' }
       }, 1000 );
 }
 
