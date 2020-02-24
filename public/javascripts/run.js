@@ -19,8 +19,9 @@ $(document).ready( function() {
 
 function bringSearchResults() {
     var type = $("input:radio[name ='type']:checked").val();
+    $("button#search").prop('disabled', true);
+    $('#results').html('');
     if($("#searchinput").val().length > 2) {
-        $('#results').html('');
             $.ajax({
                 global: false,
                 type: 'GET',
@@ -41,10 +42,14 @@ function bringSearchResults() {
                 error: function (request, status, error) {
                     console.log(error);
                     $('#results').append('<h4>PN not found!</h4>');
+                },
+                complete: function () {
+                    $("button#search").prop('disabled', false);
                 }
             });
     } else {
         $('#results').append('<h4>Add at least 3 characters</h4>');
+        $("button#search").prop('disabled', false);
     }
 
 }
