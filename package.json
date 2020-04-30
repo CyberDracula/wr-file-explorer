@@ -15,7 +15,7 @@
     "findit": "^2.0.0",
     "font-awesome": "^4.7.0",
     "http-errors": "~1.6.3",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "morgan": "~1.9.1",
     "pdf-image": "^2.0.0",
     "pdf-poppler": "^0.2.1",
