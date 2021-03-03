@@ -20,7 +20,7 @@
     "pdf-image": "^2.0.0",
     "pdf-poppler": "^0.2.1",
     "popper.js": "^1.16.1",
-    "pug": "^2.0.4"
+    "pug": "^3.0.1"
   },
   "devDependencies": {
     "lint": "^0.7.0"
