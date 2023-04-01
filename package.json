@@ -23,6 +23,6 @@
     "pug": "^2.0.4"
   },
   "devDependencies": {
-    "lint": "^0.7.0"
+    "lint": "^0.8.19"
   }
 }
